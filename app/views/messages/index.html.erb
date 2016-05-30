@@ -2,7 +2,7 @@
   <div class="panel-heading">
     メッセージ一覧
   </div>
-    
+
   <div class="panel-body">
     <% @messages.each do |message| %>
       <span class="label label-info"><%= message.name %></span>
@@ -12,19 +12,4 @@
   </div>
 </div>
 
-<%= form_for(@message, html:{role: "form", class: "form-horizontal"}) do |f| %>
-  
-  <div class="form-group">
-  <%= f.label :name, class:"col-xs-2 control-label" %>
-  <div class="col-xs-10">
-    <%= f.text_field :name,  class: "form-control" %>
-  </div>
-</div>
-  <div class="form-group">
-  <%= f.label :body, class:"col-xs-2 control-label" %>
-  <div class="col-xs-10">
-    <%= f.text_area :body,  class: "form-control" %>
-  </div>
-　</div>
-  <%= f.submit class: "btn btn-sm btn-primary" %>
-<% end %>
+<%= render 'form' %>
